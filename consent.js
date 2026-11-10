@@ -19,9 +19,21 @@
     }
   };
 
-  const activate = (facade) => {
+  const withAutoplay = (src) => {
+    try {
+      const url = new URL(src, window.location.href);
+      url.searchParams.set("autoplay", "1");
+      return url.toString();
+    } catch {
+      return src.includes("?") ? `${src}&autoplay=1` : `${src}?autoplay=1`;
+    }
+  };
+
+  const activate = (facade, { autoplay = false } = {}) => {
     const provider = facade.dataset.provider;
-    const src = facade.dataset.src;
+    const rawSrc = facade.dataset.src;
+    const src =
+      autoplay && provider === "youtube" ? withAutoplay(rawSrc) : rawSrc;
     const title = facade.dataset.title || "External player";
     const allow = facade.dataset.allow || "";
     const height = facade.dataset.height;
@@ -49,13 +61,14 @@
     const loadBtn = facade.querySelector("[data-load]");
 
     if (provider && remembered()[provider]) {
-      activate(facade);
+      // Restore embed quietly, no autoplay on refresh
+      activate(facade, { autoplay: false });
       return;
     }
 
     loadBtn?.addEventListener("click", (event) => {
       event.preventDefault();
-      activate(facade);
+      activate(facade, { autoplay: true });
     });
   };
 

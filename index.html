@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>fatigue future — emotional wavepunk from Rosenheim</title>
+    <title>fatigue future: emotional wavepunk from Rosenheim</title>
     <meta
       name="description"
       content="fatigue future ist emotional wavepunk aus Rosenheim: zwischen Resignation und Rebellion, Trost in der Wärme der Melancholie."
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:site_name" content="fatigue future" />
-    <meta property="og:title" content="fatigue future — emotional wavepunk" />
+    <meta property="og:title" content="fatigue future: emotional wavepunk" />
     <meta
       property="og:description"
       content="Emotional wavepunk aus Rosenheim. Zwischen Resignation und Rebellion."
@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://fatiguefuture.github.io/" />
     <meta
       property="og:image"
-      content="https://fatiguefuture.github.io/assets/icon-512.png"
+      content="https://fatiguefuture.github.io/assets/tear.png"
     />
     <meta property="og:image:alt" content="fatigue future Träne" />
 
@@ -34,13 +34,13 @@
     />
     <meta
       name="twitter:image"
-      content="https://fatiguefuture.github.io/assets/icon-512.png"
+      content="https://fatiguefuture.github.io/assets/tear.png"
     />
 
     <meta name="theme-color" content="#ff70e0" />
-    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32" />
-    <link rel="icon" href="assets/icon-512.png" type="image/png" sizes="512x512" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="icon" href="assets/tear.png" type="image/png" sizes="1024x1024" />
+    <link rel="apple-touch-icon" href="assets/tear.png" />
+
 
     <link rel="stylesheet" href="styles.css" />
 
@@ -52,7 +52,7 @@
         "alternateName": "Fa⸸igue Fu⸸ure",
         "genre": ["emotional wavepunk", "post-punk", "wave punk", "alternative"],
         "url": "https://fatiguefuture.github.io/",
-        "image": "https://fatiguefuture.github.io/assets/icon-512.png",
+        "image": "https://fatiguefuture.github.io/assets/tear.png",
         "email": "mailto:fatiguefuture@protonmail.com",
         "address": {
           "@type": "PostalAddress",
@@ -68,23 +68,19 @@
     </script>
   </head>
   <body>
+    <div class="bg-wash bg-wash--left" aria-hidden="true"></div>
+    <div class="bg-wash bg-wash--right" aria-hidden="true"></div>
     <div class="tears" aria-hidden="true">
-      <span class="tear tear--left" style="--i: 0"></span>
-      <span class="tear tear--left" style="--i: 1"></span>
-      <span class="tear tear--left" style="--i: 2"></span>
-      <span class="tear tear--left" style="--i: 3"></span>
-      <span class="tear tear--left" style="--i: 4"></span>
-      <span class="tear tear--left" style="--i: 5"></span>
-      <span class="tear tear--left" style="--i: 6"></span>
-      <span class="tear tear--left" style="--i: 7"></span>
-      <span class="tear tear--right" style="--i: 0"></span>
-      <span class="tear tear--right" style="--i: 1"></span>
-      <span class="tear tear--right" style="--i: 2"></span>
-      <span class="tear tear--right" style="--i: 3"></span>
-      <span class="tear tear--right" style="--i: 4"></span>
-      <span class="tear tear--right" style="--i: 5"></span>
-      <span class="tear tear--right" style="--i: 6"></span>
-      <span class="tear tear--right" style="--i: 7"></span>
+      <span class="tear tear--left"></span>
+      <span class="tear tear--left"></span>
+      <span class="tear tear--left"></span>
+      <span class="tear tear--left"></span>
+      <span class="tear tear--left"></span>
+      <span class="tear tear--right"></span>
+      <span class="tear tear--right"></span>
+      <span class="tear tear--right"></span>
+      <span class="tear tear--right"></span>
+      <span class="tear tear--right"></span>
     </div>
 
     <main class="page">
@@ -146,7 +142,7 @@
           data-provider="youtube"
           data-title="fatigue future: Winter Limerence"
           data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          data-src="https://www.youtube-nocookie.com/embed/GQcyp2q3ArY?autoplay=1"
+          data-src="https://www.youtube-nocookie.com/embed/GQcyp2q3ArY"
         >
           <img
             class="facade__poster"
@@ -205,5 +201,6 @@
     </main>
 
     <script src="consent.js" defer></script>
+    <script src="tears.js?v=7" defer></script>
   </body>
 </html>

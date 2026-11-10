@@ -1,4 +1,4 @@
-# fatigue future — Website
+# fatigue future: Website
 
 Statische Bandseite (HTML/CSS) für GitHub Pages.
 
