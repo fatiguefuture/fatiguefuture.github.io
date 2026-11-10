@@ -27,10 +27,10 @@
     <meta property="og:image:alt" content="fatigue future Träne" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="fatigue future — emotional wavepunk" />
+    <meta name="twitter:title" content="fatigue future: emotional wavepunk" />
     <meta
       name="twitter:description"
-      content="Emotional wavepunk aus Rosenheim. Zwischen Resignation und Rebellion."
+      content="Emotional wavepunk aus Rosenheim."
     />
     <meta
       name="twitter:image"
@@ -50,7 +50,7 @@
         "@type": "MusicGroup",
         "name": "fatigue future",
         "alternateName": "Fa⸸igue Fu⸸ure",
-        "genre": ["emotional wavepunk", "post-punk", "wave punk"],
+        "genre": ["emotional wavepunk", "post-punk", "wave punk", "alternative"],
         "url": "https://fatiguefuture.github.io/",
         "image": "https://fatiguefuture.github.io/assets/icon-512.png",
         "email": "mailto:fatiguefuture@protonmail.com",
@@ -98,39 +98,83 @@
         <h2 id="about-heading" class="visually-hidden">About</h2>
         <p class="bio">
           Die Post-Punker*innen fatigue future oszillieren zwischen Resignation
-          und Rebellion und finden Trost in der Wärme der Melancholie —
-          emotional wavepunk aus Rosenheim.
+          und Rebellion und finden Trost in der Wärme der Melancholie.
         </p>
       </section>
 
       <section class="listen" aria-labelledby="listen-heading">
         <h2 id="listen-heading">Listen</h2>
-        <div class="embed">
-          <iframe
-            title="Bandcamp Player: grottesca*pittura"
-            style="border: 0; width: 100%; height: 470px"
-            src="https://bandcamp.com/EmbeddedPlayer/album=3301228247/size=large/bgcol=ffffff/linkcol=ff70e0/artwork=small/transparent=true/"
-            seamless
-            loading="lazy"
-          >
-            <a href="https://fatiguefuture.bandcamp.com/album/grottesca-pittura"
-              >grottesca*pittura by fatigue future</a
+        <div
+          class="facade facade--bandcamp"
+          data-facade
+          data-provider="bandcamp"
+          data-title="Bandcamp Player: grottesca*pittura"
+          data-height="470px"
+          data-src="https://bandcamp.com/EmbeddedPlayer/album=3301228247/size=large/bgcol=ffffff/linkcol=ff70e0/artwork=small/transparent=true/"
+        >
+          <img
+            class="facade__poster"
+            src="assets/poster-grottesca.jpg"
+            alt=""
+            width="700"
+            height="700"
+            decoding="async"
+          />
+          <button type="button" class="facade__hit" data-load>
+            <span class="facade__play" aria-hidden="true"></span>
+            <span class="facade__hit-label">Player laden</span>
+          </button>
+          <div class="facade__bar">
+            <span>Bandcamp</span>
+            <span aria-hidden="true">·</span>
+            <a href="datenschutz.html">Datenschutz</a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://fatiguefuture.bandcamp.com/album/grottesca-pittura"
+              rel="noopener noreferrer"
+              >extern öffnen</a
             >
-          </iframe>
+          </div>
         </div>
       </section>
 
       <section class="video" aria-labelledby="video-heading">
         <h2 id="video-heading">Winter Limerence</h2>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/GQcyp2q3ArY"
-            title="fatigue future — Winter Limerence"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+        <div
+          class="facade facade--video"
+          data-facade
+          data-provider="youtube"
+          data-title="fatigue future: Winter Limerence"
+          data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          data-src="https://www.youtube-nocookie.com/embed/GQcyp2q3ArY?autoplay=1"
+        >
+          <img
+            class="facade__poster"
+            src="assets/poster-winter.jpg"
+            alt=""
+            width="988"
+            height="984"
+            decoding="async"
+          />
+          <button
+            type="button"
+            class="facade__hit"
+            data-load
+            aria-label="Winter Limerence von YouTube laden"
+          >
+            <span class="facade__play" aria-hidden="true"></span>
+          </button>
+          <div class="facade__bar">
+            <span>YouTube</span>
+            <span aria-hidden="true">·</span>
+            <a href="datenschutz.html">Datenschutz</a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://www.youtube.com/watch?v=GQcyp2q3ArY"
+              rel="noopener noreferrer"
+              >extern öffnen</a
+            >
+          </div>
         </div>
       </section>
 
@@ -154,6 +198,12 @@
           </li>
         </ul>
       </section>
+
+      <footer class="site-footer">
+        <a href="datenschutz.html">Datenschutz</a>
+      </footer>
     </main>
+
+    <script src="consent.js" defer></script>
   </body>
 </html>
