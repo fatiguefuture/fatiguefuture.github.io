@@ -136,19 +136,72 @@ body {
 
 .listen,
 .video,
-.links {
+.links,
+.gigs {
   margin-bottom: 2rem;
 }
 
 .listen h2,
 .video h2,
-.links h2 {
+.links h2,
+.gigs h2 {
   margin: 0 0 0.75rem;
   font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.gigs__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gigs__item {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.gigs__item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.gigs__item time {
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.gigs__label a {
+  color: inherit;
+  text-underline-offset: 0.12em;
+}
+
+.gigs__label a:hover,
+.gigs__label a:focus-visible {
+  color: var(--accent);
+}
+
+.gigs__empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.gigs__empty a {
+  color: inherit;
+  text-underline-offset: 0.12em;
+}
+
+.gigs__empty a:hover,
+.gigs__empty a:focus-visible {
+  color: var(--accent);
 }
 
 .facade {
@@ -452,6 +505,11 @@ body {
 
   .tear {
     opacity: 0.55;
+  }
+
+  .gigs__item {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
   }
 }
 

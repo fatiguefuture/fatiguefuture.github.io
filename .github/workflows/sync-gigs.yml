@@ -1,0 +1,88 @@
+name: Sync gigs from Nextcloud
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: sync-gigs
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  AUFTTRITTE_URL: https://nx61267.your-storageshare.de/s/gebaHkHg4SKT6HL/download
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch Auftritte.txt
+        run: |
+          set -euo pipefail
+          RAW="$RUNNER_TEMP/auftritte.raw.txt"
+          echo "RAW=$RAW" >> "$GITHUB_ENV"
+
+          curl --fail --silent --show-error --location \
+            --output "$RAW" \
+            "$AUFTTRITTE_URL"
+
+          if [[ ! -s "$RAW" ]]; then
+            echo "Downloaded file is empty" >&2
+            exit 1
+          fi
+
+          if grep -qi '<html' "$RAW"; then
+            echo "Download looks like an HTML error page" >&2
+            exit 1
+          fi
+
+      - name: Parse into gigs.json
+        run: |
+          set -euo pipefail
+          NEXT="$RUNNER_TEMP/gigs.next.json"
+
+          node scripts/parse-gigs.mjs "$RAW" > "$NEXT"
+
+          if ! jq -e '.gigs | type == "array"' "$NEXT" >/dev/null; then
+            echo "Parser did not produce a gigs array" >&2
+            exit 1
+          fi
+
+          NEXT_COUNT="$(jq '.gigs | length' "$NEXT")"
+          PREV_COUNT=0
+          if [[ -f gigs.json ]]; then
+            PREV_COUNT="$(jq '.gigs | length' gigs.json)"
+          fi
+
+          if [[ "$PREV_COUNT" -gt 0 && "$NEXT_COUNT" -eq 0 ]]; then
+            echo "Refusing to wipe gigs.json: previous had $PREV_COUNT gig(s), new parse is empty" >&2
+            exit 1
+          fi
+
+          if [[ -f gigs.json ]] && \
+             jq -c '.gigs' "$NEXT" | cmp -s - <(jq -c '.gigs' gigs.json); then
+            echo "No gig changes"
+          else
+            cp "$NEXT" gigs.json
+            echo "gigs.json updated"
+          fi
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          if [[ -z "$(git status --porcelain gigs.json)" ]]; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gigs.json
+          git commit -m "Sync gigs from Nextcloud."
+          git push
