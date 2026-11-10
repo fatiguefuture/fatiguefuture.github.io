@@ -47,11 +47,19 @@ body {
 }
 
 .hero h1 {
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.45rem;
   font-size: clamp(1.75rem, 6vw, 2.25rem);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: lowercase;
+}
+
+.genre {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  font-size: 0.95rem;
 }
 
 .location {
