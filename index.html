@@ -3,44 +3,44 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>fatigue future: emotional wavepunk from Rosenheim</title>
+    <title>Fatigue Future: emotional wavepunk from Rosenheim</title>
     <meta
       name="description"
-      content="fatigue future ist emotional wavepunk aus Rosenheim: zwischen Resignation und Rebellion, Trost in der Wärme der Melancholie."
+      content="Fatigue Future is a three-piece DIY band from Rosenheim, Germany, playing emotional wavepunk and post-punk."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://fatiguefuture.github.io/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
-    <meta property="og:site_name" content="fatigue future" />
-    <meta property="og:title" content="fatigue future: emotional wavepunk" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Fatigue Future" />
+    <meta property="og:title" content="Fatigue Future: emotional wavepunk" />
     <meta
       property="og:description"
-      content="Emotional wavepunk aus Rosenheim. Zwischen Resignation und Rebellion."
+      content="Three-piece DIY band from Rosenheim, Germany: emotional wavepunk and post-punk."
     />
     <meta property="og:url" content="https://fatiguefuture.github.io/" />
     <meta
       property="og:image"
-      content="https://fatiguefuture.github.io/assets/tear.png"
+      content="https://fatiguefuture.github.io/assets/band.jpg"
     />
-    <meta property="og:image:alt" content="fatigue future Träne" />
+    <meta property="og:image:alt" content="Fatigue Future, Bandfoto" />
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="fatigue future: emotional wavepunk" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fatigue Future: emotional wavepunk" />
     <meta
       name="twitter:description"
-      content="Emotional wavepunk aus Rosenheim."
+      content="Three-piece DIY band from Rosenheim, Germany: emotional wavepunk and post-punk."
     />
     <meta
       name="twitter:image"
-      content="https://fatiguefuture.github.io/assets/tear.png"
+      content="https://fatiguefuture.github.io/assets/band.jpg"
     />
 
     <meta name="theme-color" content="#ff70e0" />
     <link rel="icon" href="assets/tear.png" type="image/png" sizes="1024x1024" />
     <link rel="apple-touch-icon" href="assets/tear.png" />
-
 
     <link rel="stylesheet" href="styles.css" />
 
@@ -48,21 +48,45 @@
       {
         "@context": "https://schema.org",
         "@type": "MusicGroup",
-        "name": "fatigue future",
-        "alternateName": "Fa⸸igue Fu⸸ure",
-        "genre": ["emotional wavepunk", "post-punk", "wave punk", "alternative"],
+        "name": "Fatigue Future",
+        "alternateName": ["fatigue future", "Fa⸸igue Fu⸸ure"],
+        "description": "Fatigue Future is a three-piece DIY band from Rosenheim, Germany, playing emotional wavepunk and post-punk. Melancholic melodies, noisy guitars, keys and driving rhythms move between coldwave atmosphere and punk energy.",
+        "genre": [
+          "emotional wavepunk",
+          "wave punk",
+          "post-punk",
+          "coldwave"
+        ],
         "url": "https://fatiguefuture.github.io/",
-        "image": "https://fatiguefuture.github.io/assets/tear.png",
+        "image": "https://fatiguefuture.github.io/assets/band.jpg",
         "email": "mailto:fatiguefuture@protonmail.com",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Rosenheim",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Rosenheim",
+            "addressCountry": "DE"
+          }
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Rosenheim",
           "addressCountry": "DE"
         },
+        "album": {
+          "@type": "MusicAlbum",
+          "name": "grottesca*pittura",
+          "url": "https://fatiguefuture.bandcamp.com/album/grottesca-pittura",
+          "byArtist": {
+            "@type": "MusicGroup",
+            "name": "Fatigue Future"
+          }
+        },
         "sameAs": [
           "https://fatiguefuture.bandcamp.com",
           "https://www.instagram.com/fatigue.future/",
-          "https://www.youtube.com/watch?v=GQcyp2q3ArY"
+          "https://www.youtube.com/@FatigueFuture"
         ]
       }
     </script>
@@ -92,9 +116,30 @@
 
       <section class="about" aria-labelledby="about-heading">
         <h2 id="about-heading" class="visually-hidden">About</h2>
+        <img
+          class="about__photo"
+          src="assets/band.jpg"
+          alt="Fatigue Future, Bandfoto"
+          width="1400"
+          height="1400"
+          loading="lazy"
+          decoding="async"
+        />
         <p class="bio">
-          Die Post-Punker*innen fatigue future oszillieren zwischen Resignation
+          Die Post-Punker*innen Fatigue Future oszillieren zwischen Resignation
           und Rebellion und finden Trost in der Wärme der Melancholie.
+        </p>
+        <p class="bio bio--facts">
+          Fatigue Future ist ein DIY-Trio aus Rosenheim und spielt emotionalen
+          Wavepunk und Post-Punk. Melancholische Melodien, noisy Gitarren,
+          Keys und treibende Rhythmen bewegen sich zwischen Coldwave-Atmosphäre
+          und Punk-Energie.
+        </p>
+        <p class="bio bio--facts" lang="en">
+          Fatigue Future is a three-piece DIY band from Rosenheim, Germany,
+          playing emotional wavepunk and post-punk. Melancholic melodies,
+          noisy guitars, keys and driving rhythms move between coldwave
+          atmosphere and punk energy.
         </p>
       </section>
 
@@ -201,13 +246,20 @@
           </li>
           <li>
             <a
+              href="https://www.youtube.com/@FatigueFuture"
+              rel="noopener noreferrer"
+              >YouTube</a
+            >
+          </li>
+          <li>
+            <a
               href="https://instagram.com/fatigue.future/"
               rel="noopener noreferrer"
               >Instagram</a
             >
           </li>
           <li>
-            <a href="mailto:fatiguefuture@protonmail.com">E-Mail</a>
+            <a href="mailto:fatiguefuture@protonmail.com">Booking</a>
           </li>
         </ul>
       </section>

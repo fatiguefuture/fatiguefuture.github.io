@@ -128,10 +128,28 @@ body {
   margin-bottom: 2rem;
 }
 
+.about__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1.25rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 .bio {
   margin: 0;
   font-size: 1.05rem;
   text-wrap: pretty;
+}
+
+.bio + .bio {
+  margin-top: 0.85rem;
+}
+
+.bio--facts {
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 .listen,
